@@ -8,24 +8,29 @@
 <body>
     <script>
         
-        let max = +prompt("Введите число", "")
-        let star = "";
-        let result = "";
-            for(i=0; i < max; i++){
-                star += "*";
-                result += '\n' + star;
+        function padString() {
+            let word = prompt("Введите слово", "");
+            let wordLength = +prompt("Введите длину слова", "");
+            if(typeof(wordLength) != Number) {
+                wordLength = +prompt("Введите длину слова(число)", "");
             }
-            console.log(result);
-
-
-
-        let max1 = +prompt("Введите число", "")
-        let star1 = "";
-            for (i=0; i <= max1; i++) {
-                star1 += '*'.repeat(i) + '\n';
+            let symbol = prompt("Введите символ", "");
+            let flag = true;
+            let newWord;
+            flag = confirm("True или false?");
+            if (word.length > wordLength) {
+                console.log(word);
             }
-            console.log(star1);
-       
-       </script>
+            if (flag == true) {
+                newWord = word + symbol.repeat(wordLength - word.length);
+                console.log(newWord);
+            } else {
+                newWord = symbol.repeat(wordLength - word.length) + word;
+                console.log(newWord);
+            }
+        }
+        padString();
+
+    </script>
 </body>
 </html>
