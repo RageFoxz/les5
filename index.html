@@ -11,14 +11,14 @@
         function padString(word, wordLength, symbol = "*", flag = true) {
             let newWord;
             if (word.length > wordLength) {
-                console.log(word);
+                return word;
             }
             if (flag == true) {
                 newWord = word + symbol.repeat(wordLength - word.length);
-                console.log(newWord);
+                return newWord;
             } else {
                 newWord = symbol.repeat(wordLength - word.length) + word;
-                console.log(newWord);
+                return newWord;
             }
         }
         padString("bla",10,"&",false);
