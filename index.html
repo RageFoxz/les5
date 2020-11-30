@@ -8,16 +8,8 @@
 <body>
     <script>
         
-        function padString() {
-            let word = prompt("Введите слово", "");
-            let wordLength = +prompt("Введите длину слова", "");
-            if(typeof(wordLength) != Number) {
-                wordLength = +prompt("Введите длину слова(число)", "");
-            }
-            let symbol = prompt("Введите символ", "");
-            let flag = true;
+        function padString(word, wordLength, symbol = "*", flag = true) {
             let newWord;
-            flag = confirm("True или false?");
             if (word.length > wordLength) {
                 console.log(word);
             }
@@ -29,7 +21,7 @@
                 console.log(newWord);
             }
         }
-        padString();
+        padString("bla",10,"&",false);
 
     </script>
 </body>
